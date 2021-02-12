@@ -8,7 +8,6 @@ for (let i=1; i<=CELLS_COUNT; i++){
 }
 let visited = [];
 let next;
-console.log(Math.pow(CELLS_COUNT,2))
 function visit (y, x){
     if(visited.length<Math.pow(CELLS_COUNT,2)){
         let cell = document.getElementById(`${y}.${x}`);
