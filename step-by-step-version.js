@@ -7,9 +7,12 @@ for (let i=1; i<=CELLS_COUNT; i++){
     }
 }
 let visited = [];
+let next;
+console.log(Math.pow(CELLS_COUNT,2))
 function visit (y, x){
     if(visited.length<Math.pow(CELLS_COUNT,2)){
         let cell = document.getElementById(`${y}.${x}`);
+        console.log(cell.id)
         if (!visited.includes(cell.id)){
             visited.push(cell.id);
             cell.style.backgroundColor = "wheat";
@@ -29,22 +32,22 @@ function visit (y, x){
                 case 'u':
                     cell.style.borderTop = '1px solid wheat';
                     u.style.borderBottom = '1px solid wheat';
-                    visit(y-1, x);
+                    next = [y-1, x];
                     break;
                 case 'd':
                     cell.style.borderBottom = '1px solid wheat';
                     d.style.borderTop = '1px solid wheat';
-                    visit(y+1, x);
+                    next = [y+1, x];
                     break;
                 case 'l':
                     cell.style.borderLeft = '1px solid wheat';
                     l.style.borderRight = '1px solid wheat';
-                    visit(y, x-1);
+                    next = [y, x-1];
                     break;
                 case 'r':
                     cell.style.borderRight = '1px solid wheat';
                     r.style.borderLeft = '1px solid wheat';
-                    visit(y, x+1);
+                    next = [y, x+1];
                     break;
             }
         }
@@ -52,13 +55,17 @@ function visit (y, x){
             let newCell = visited[getRandom(0, visited.length -1)];
             let newX = newCell.split(".")[1];
             let newY = newCell.split(".")[0];
-            visit(parseInt(newY), parseInt(newX))
+            next = [parseInt(newY), parseInt(newX)]
         }
     }
     else {
         console.log(new Set(visited).size == visited.length)
     }
+    console.log(next)
 }
 visit(1,1); //start point
+document.addEventListener('keydown', (event) => {if(event.code === "Space"){visit(next[0],next[1])}})
+
+
 function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min +1)) + min}
