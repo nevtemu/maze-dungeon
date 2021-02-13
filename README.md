@@ -1,5 +1,5 @@
 # Maze and dungeon generator
-Originaly inspired by [Path of exile](https://www.pathofexile.com/ "Official game website") [delve](https://pathofexile.gamepedia.com/Delve "Path of exile game wiki - Delve")  endless dungeon with randomly generates passes and biomes.    
+Originaly inspired by [Path of exile](https://www.pathofexile.com/ "Official game website") [delve](https://pathofexile.gamepedia.com/Delve "Path of exile game wiki - Delve")  endless dungeon with randomly generated passes and biomes.    
 ### Algorithm   
 I've built it around __cells IDs__ containing X and Y coordinates, forming a grid of set size.
 I created algorithm myself, but I found it very similar to [depth first search](https://en.wikipedia.org/wiki/Depth-first_search "Depth first search") algorithm.      
@@ -13,7 +13,7 @@ Maze generation in action:
 Maze with some cells blocked (number of blocked cells can be tweaked):     
 <img src="./src/_maze_blocked-cells.png" width="420px"/>     
 Maze with extra doors (more like dungeon style):     
-<img src="./src/_maze_blocked-cells.png" width="420px"/>     
+<img src="./src/_maze_extra-doors.png" width="420px"/>     
      
 ### Settings
 Maze settings (size, blocked cells, extra passages) set in constants at the start of the script.    
