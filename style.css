@@ -15,4 +15,5 @@
     display:grid;
     grid-template: repeat(var(--cells), 1fr)/repeat(var(--cells), 1fr);
     width: calc(var(--cells)*var(--size));
+    margin: 10px;
 }
